@@ -1,6 +1,7 @@
 package models;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,8 +19,14 @@ class HeroTest {
 
     @Test
     public void newHero_instantiatesCorrectly_true() {
-        Hero newHero = Hero.setUpNewHero();
+        Hero newHero = new Hero("1:hero");
         assertTrue(newHero instanceof Hero);
     }
+    @Test
+    public void newHero_getName_String() {
+        Hero newHero = new Hero("hero");
+        assertEquals("hero", newHero.getName());
+    }
+
 
 }
