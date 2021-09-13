@@ -44,10 +44,16 @@ public class App {
 
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
-        post("/hero/new", (request, response) -> {
+        post("/new/hero", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            String content = request.queryParams("name");
-            Hero newHero = new Hero("name",18,"flying","fire");
+            String name = request.queryParams("name");
+             Integer age = Integer.parseInt(request.queryParams("age"));
+            String power = request.queryParams("power");
+            String weakness = request.queryParams("weakness");
+            Hero newHero = new Hero(name,age,power,weakness);
+            request.session().attribute("hero",name);
+            model.put("hero",request.session().attribute("hero"));
+            model.put("newHero",newHero);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
     }
