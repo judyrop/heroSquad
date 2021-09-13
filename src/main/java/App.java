@@ -1,4 +1,5 @@
 import models.Hero;
+import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -34,9 +35,9 @@ public class App {
         post("/squad-form", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 
-            String InputtedSquadName = request.queryParams("SquadName");
-            request.session().attribute("SquadName", InputtedSquadName);
-            model.put("SquadName", InputtedSquadName);
+//            String InputtedSquadName = request.queryParams("SquadName");
+//            request.session().attribute("SquadName", InputtedSquadName);
+//            model.put("SquadName", InputtedSquadName);
 
             return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
@@ -67,6 +68,26 @@ public class App {
             model.put("heros", heros);
 
             return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/squad",(req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> squads = Squad.getAll();
+            model.put("squads",squads);
+            ArrayList<Hero> heros = Hero.getAll();
+            model.put("heros",heros);
+            Squad newSquad = Squad.findBySquadId(1);
+            model.put("allSquadMembers", newSquad.getSquadMembers());
+            return new ModelAndView(model, "squad-form.hbs");
+        }, new HandlebarsTemplateEngine());
+        post("/new/squad",(req,res)-> {
+            Map<String, Object> model = new HashMap<>();
+            String squadName = req.queryParams("squadName");
+            Integer size = Integer.parseInt(req.queryParams("size"));
+            String cause = req.queryParams("cause");
+            Squad newSquad = new Squad(squadName,size,cause);
+            req.session().attribute("item",squadName);
+            model.put("item",req.session().attribute("item"));
+            return new ModelAndView(model,"success.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

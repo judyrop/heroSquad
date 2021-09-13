@@ -14,6 +14,31 @@
 
        <button type="submit" class="btn btn-default">Add new hero</button>
    </form>
+   <a class="btns" href="/squad-form">Form Your Squad</a>
+                   <br><br>
+           {{#if squads}}
+                   AVAILABLE SQUADS
+
+           {{#each squads}}
+               <div class="squad-cont">
+
+                    <h1>{{ squadName }} </h1>
+                     <button  class="btns float-right"> <a href="new/{{squadId}}">Squad Stats</a></button>
+                       <p>Id: {{squadId}}</p>
+                       <p>Purpose: {{cause}}</p>
+                       <p>Max participants: {{ size }}</p>
+                        <h3>MEMBERS</h3>
+                    <button class="addMember add-btn" >Add New Member</button>
+                        {{#each squadMembers}}
+                        <div class="member-count">
+                         <h4>Name: {{name}}</h4>
+                        </div>
+                       {{/each}}
+                       </div>
+                {{/each}}
+                {{else}}
+               <p>create a new squad</p>
+               {{/if}}
 {{/partial}}
 
 {{> layout.hbs}}
