@@ -9,6 +9,10 @@ public class App {
     public static void main(String[] args) {
 //      get("/hero",(request,response) -> "Hero squad!");
         staticFileLocation("/public");
+        get("/",(request,response)->{
+           Map<String, Object> model = new HashMap<String, Object>();
+          return new ModelAndView(new HashMap(), "index.hbs");
+         }, new HandlebarsTemplateEngine());
 //        get("/hero",(request,response)->{
 //            Map<String, Object> model = new HashMap<String, Object>();
 //            return new ModelAndView(new HashMap(), "hero.hbs");

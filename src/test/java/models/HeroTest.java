@@ -45,4 +45,13 @@ class HeroTest {
         Hero newHero = new Hero("Alvin",18,"flying", "fire");
         assertEquals("fire", newHero.getWeakness());
     }
+
+    @Test
+    public void getAll_returns_getAll_instancesOfHero()
+    {
+        Hero hero = new Hero("Alvin",18,"flying","fire");
+        Hero anotherHero = new Hero("Alvin",18,"flying","fire");
+        assertTrue(Hero.getAll().contains(hero));
+        assertTrue(Hero.getAll().contains(anotherHero));
+    }
 }
