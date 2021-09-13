@@ -19,6 +19,10 @@ public class Hero {
         this.id = instances.size();
     }
 
+    public static Hero setUpNewHero() {
+        return new Hero("Alvin",18,"flying","fire");
+    }
+
     public String getName() {
       return name;
     }
