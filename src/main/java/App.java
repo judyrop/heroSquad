@@ -2,6 +2,7 @@ import models.Hero;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,6 +56,13 @@ public class App {
             model.put("hero",request.session().attribute("hero"));
             model.put("newHero",newHero);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Hero> heros = Hero.getAll();
+            model.put("heros", heros);
+
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
