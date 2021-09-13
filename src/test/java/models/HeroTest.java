@@ -15,7 +15,8 @@ class HeroTest {
     }
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
+        Hero.clearAllHeros();
     }
     @Test
     public void newHero_instantiatesCorrectly_true() {
