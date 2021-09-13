@@ -48,9 +48,9 @@ class HeroTest {
 
     @Test
     public void getAll_returns_getAll_instancesOfHero()throws Exception {
-        Hero newhero = new Hero("Alvin",18,"flying","fire");
+        Hero newHero = new Hero("Alvin",18,"flying","fire");
         Hero anotherHero = new Hero("Alvin",18,"flying","fire");
-        assertTrue(Hero.getAll().contains(newhero));
+        assertTrue(Hero.getAll().contains(newHero));
         assertTrue(Hero.getAll().contains(anotherHero));
     }
     @Test

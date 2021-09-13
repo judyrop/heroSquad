@@ -43,5 +43,40 @@ class SquadTest {
         newSquad.setSquadMembers(newHero);
         assertEquals("Alvin",newSquad.getSquadMembers().get(0).getName());
     }
-
+    @Test
+    public void getAll_returns_getAll_instancesOfSquad()throws Exception {
+        Squad newSquad = new Squad("lions", 5, "fueling");
+        Squad anotherSquad = new Squad("lions",5, "fueling");
+        assertTrue(Hero.getAll().contains(newSquad));
+        assertTrue(Hero.getAll().contains(anotherSquad));
+    }
+    @Test
+    public void newSquad_allArraySquadMembers_Array() {
+        Hero newHero = Hero.setUpNewHero();
+        Squad newSquad = Squad.setUpNewSquad("lions",5,"fueling");
+        newSquad.clearAllSquadMembers();
+        newSquad.getSquadMembers().add(newHero);
+        newSquad.getSquadMembers().add(newHero);
+        assertEquals("Alvin",newSquad.getSquadMembers().get(0).getName());
+    }
+    @Test
+    public void addMember_addsMemberToSquad_Hero(){
+        Hero newHero = Hero.setUpNewHero();
+        Squad arraySquad = Squad.setUpNewSquad("lions",5,"fueling");
+        Squad newSquad = Squad.findBySquadId(1);
+        newSquad.clearAllSquadMembers();
+        newSquad.getSquadMembers().add(newHero);
+        newSquad.getSquadMembers().add(newHero);
+        assertEquals(2,newSquad.getSquadMembers().size());
+    }
+//
+//    @Test
+//    public void setNewMember_hero(){
+//        Hero.clearAllHeroes();
+//        Hero newHwero = Hero.setUpNewHero();
+//        Squad testSquad = Squad.setUpNewSquad();
+//        testSquad.setSquadMembers(newHwero);
+//
+//        assertEquals(1,testSquad.getSquadMembers().get(0).getId());
+//    }
 }

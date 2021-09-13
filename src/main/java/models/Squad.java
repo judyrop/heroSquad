@@ -6,16 +6,25 @@ public class Squad {
     private String name;
     private int size;
     private String cause;
+    private int squadId;
     private static ArrayList<Hero>  squadMembers = new ArrayList<>();
+    private static ArrayList<Squad> instances = new ArrayList<>();
     public Squad (String name, int size, String cause){
         this.name = name;
         this.size = size;
         this.cause = cause;
         this.squadMembers = new ArrayList<>();
+        instances.add(this);
+        this.squadId = instances.size();
+
     }
 
-    public static Squad setUpNewSquad(String lions, int i, String s) {
+    public static Squad setUpNewSquad(String name, int size, String cause) {
         return new Squad("lions",5,"fueling");
+    }
+
+    public static Squad findBySquadId(int id) {
+       return instances.get(id-1);
     }
 
     public String getName() {
@@ -35,5 +44,10 @@ public class Squad {
     public void setSquadMembers(Hero newHero) {
         squadMembers.add(newHero);
     }
-    
+    public ArrayList<Squad> clearAllSquads() {
+        return instances;
+    }
+    public ArrayList<Squad> clearAllSquadMembers() {
+        return instances;
+    }
 }
