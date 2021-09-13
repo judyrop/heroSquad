@@ -11,6 +11,10 @@ public class App {
     public static void main(String[] args) {
 //      get("/hero",(request,response) -> "Hero squad!");
         staticFileLocation("/public");
+        get("/squad", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "squad.hbs");
+        }, new HandlebarsTemplateEngine());
         get("/",(req,res)->{
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(new HashMap(), "index.hbs");
