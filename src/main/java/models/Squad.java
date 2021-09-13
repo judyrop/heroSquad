@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Squad {
     private String name;
@@ -25,6 +26,10 @@ public class Squad {
 
     public static Squad findBySquadId(int id) {
        return instances.get(id-1);
+    }
+
+    public static ArrayList<Squad> getAll() {
+        return instances;
     }
 
     public String getName() {

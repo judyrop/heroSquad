@@ -15,6 +15,11 @@ class SquadTest {
     @AfterEach
     void tearDown() {
     }
+//    @Test
+////    public void newSquad_instantiatesCorrectly_true()throws Exception {
+////        Squad newSquad = new Squad("Lions",5,"fueling");
+////        assertEquals(newSquad instanceof Squad);
+////    }
     @Test
     public void newSquad_instantiatesCorrectly_true()throws Exception {
         Squad newSquad = new Squad("Lions",5,"fueling");
@@ -47,8 +52,8 @@ class SquadTest {
     public void getAll_returns_getAll_instancesOfSquad()throws Exception {
         Squad newSquad = new Squad("lions", 5, "fueling");
         Squad anotherSquad = new Squad("lions",5, "fueling");
-        assertTrue(Hero.getAll().contains(newSquad));
-        assertTrue(Hero.getAll().contains(anotherSquad));
+        assertTrue(Squad.getAll().contains(newSquad));
+        assertTrue(Squad.getAll().contains(anotherSquad));
     }
     @Test
     public void newSquad_allArraySquadMembers_Array() {
@@ -69,14 +74,5 @@ class SquadTest {
         newSquad.getSquadMembers().add(newHero);
         assertEquals(2,newSquad.getSquadMembers().size());
     }
-//
-//    @Test
-//    public void setNewMember_hero(){
-//        Hero.clearAllHeroes();
-//        Hero newHwero = Hero.setUpNewHero();
-//        Squad testSquad = Squad.setUpNewSquad();
-//        testSquad.setSquadMembers(newHwero);
-//
-//        assertEquals(1,testSquad.getSquadMembers().get(0).getId());
-//    }
+
 }
