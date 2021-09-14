@@ -1,16 +1,14 @@
-{{#partial "content"}}
-<div class="index">
- <h3>Hero's Details</h3>
-  <p>Hero squad is a game for kids where you can choose a superhero</p>
-  {{#each hero }}
-  <p>Name : {{name}}</p>
-  <p>Age : {{age}}</p>
-  <p>Special power : {{power}}</p>
-  <p>Weakness : {{weakness}}</p>
-       <a href="/squad" class="btns">Add To Squad</a>
-    {{/each}}
-</div>
+    {{#partial "content"}}
 
-{{/partial}}
+    <span id="index">
+        <h1 class="index"></h1>
+<br><br>
+    <div>
+        <a href="/heroes"><button class="btn btn-success"> Hero List</button></a>
+<br><br>
+        <a href="/squad"><button class="btn btn-warning">Check Your Squads</button></a>
+    </div>
+    </span><br><br>
 
-{{> layout.hbs}}
+    {{/partial}}
+    {{> layout.hbs}}

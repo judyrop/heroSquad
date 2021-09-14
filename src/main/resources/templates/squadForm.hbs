@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+<h1>Squad input Form</h1>
+
+<p>Add your new Squad:</p>
+
+<form action="/squad/new" method="post">
+
+    <div class="form-group">
+        <label for="name"> Squad Name</label>
+        <input id="name" name="name" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="size">Maximum Number Of Heroes</label>
+        <input id="size" name="size" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="cause">Squad Fighting Cause</label>
+        <input id="cause" name="cause" type="text" class="form-control">
+    </div>
+<br><br><br>
+    <button type="submit" class="btn btn-success ">Add Squad</button>
+</form>
+
+{{/partial}}
+
+{{> layout.hbs}}

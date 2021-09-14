@@ -1,34 +1,24 @@
 {{#block "header"}}
-
-<!DOCTYPE html>
-<html>
- <head>
-   <title>{{#block "title"}}Hero Squad{{/block}}
-</title>
-   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
- </head>
-
- <body>
- <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">Home</a></li>
-    <li role="presentation"><a href="/">See All Heroes</a></li>
-{{!--     <li role="presentation"><a href="/new/hero">Add a New Hero</a></li> --}}
- </ul>
-{{/block}}
-<div class = "col-md-5">
-<p><img src = "/images/gabriel-tovar-lQvr3z9cGYE-unsplash.jpg" alt= "photo of a superhero" width = "400" height = "200"></p>
-</div>
-<div class = "col-md-5">
-<p><img src = "/images/clint-bustrillos-X-A-LJVAhzk-unsplash.jpg" alt= "photo of a superhero" width = "400" height = "200"></p>
-</div>
-   <div class="container">
-     {{#block "content"}}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{{#block "title"}}Judy's Hero Squad{{/block}}</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <img src = "/images/clint-bustrillos-X-A-LJVAhzk-unsplash.jpg" alt = "image of superheroes" >
+    </head>
+    <body>
 {{/block}}
 
-   </div>
+
+<!-- begin inner template-->
+<div class="container">
+
+
+    {{#block "content"}}
+
+    {{/block}}
+</div><!-- end inner template-->
 
 {{#block "footer"}}
-
- </body>
-</html>
+    </body></html>
 {{/block}}

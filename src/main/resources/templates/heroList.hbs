@@ -1,0 +1,28 @@
+    {{#partial "content"}}
+
+        <h1>Created heroes List</h1>
+        <hr>
+        {{#if heroes}}
+            <p>Your Heroes are as follows</p>
+            {{#each heroes }}
+        <span class="hero-style">
+                 <p> Hero's Name: {{name}} </p>
+                 <p>Hero's Power: {{ power }}</p>
+                 <p>Hero's Weakness: {{ weakness }}</p>
+                 <p>Hero's Age:{{age}} </p>
+
+        </span>
+            {{/each}}
+
+        {{else}} <!--no posts!-->
+        <h3>No Heroes yet </h3>
+        {{/if}}
+
+        <a href="/heroes/new" class="btn btn-info"> Add a Hero</a>
+        <br>
+        <a href="/" class="btn btn-primary"> Home</a>
+
+
+    {{/partial}}
+
+    {{> layout.hbs}}

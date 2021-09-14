@@ -1,21 +1,25 @@
 {{#partial "content"}}
-<form class = "form" action = "new/hero" method = "post">
-<div class = "form-control">
-<h2>Create New Hero</h2>
-<div class = "form-group">
-  <input type="text" placeholder="Hero's name" name="name" required class="form-control">
-  </div>
-  <div class = "form-group">
-    <input type="number" placeholder="Hero's age" name="age" required class="form-control">
-    </div>
-    <div class = "form-group">
-      <input type="text" placeholder="Hero's special power" name="power" required class="form-control">
-      </div>
-      <div class = "form-group">
-        <input type="text" placeholder="Hero's weakness" name="weakness" required class="form-control">
-        </div>
-        <a href="/"><button type="submit" class="btn btn-success">Submit</button></a>
-        </div>
-        </form>
-        {{/partial}}
-        {{>layout.hbs}}
+            <h1>Create a Hero</h1>
+            <form action="/heroes/new" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input id="age" name="age" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="power">Power</label>
+                    <input id="power" name="power" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="weakness">Weakness</label>
+                    <input id="weakness" name="weakness" type="text" class="form-control">
+                </div>
+        <button type="submit" class="btn btn-primary">Add a Hero</button>
+    </form>
+
+{{/partial}}
+
+{{> layout.hbs}}
