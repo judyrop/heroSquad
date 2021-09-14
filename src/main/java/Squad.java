@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 public class Squad {
        private  String mName;
-        private String mCauseForFighting;
+        private String mCause;
         private String mSize;
         private static List<Squad> instances = new ArrayList<>();
         private int mid;
         private ArrayList<Hero>mHeroes;
 
-        public Squad(String name ,String causeForFighting, String size) {
+        public Squad(String name ,String cause, String size) {
             this.mName = name;
-            this.mCauseForFighting = causeForFighting;
+            this.mCause = cause;
             this.mSize = size;
             instances.add(this);
             mid = instances.size();
@@ -23,8 +23,8 @@ public class Squad {
             return mName;
         }
 
-        public String getCauseForFighting() {
-            return mCauseForFighting;
+        public String getCause() {
+            return mCause;
         }
 
         public String getSize() {
